@@ -1,0 +1,797 @@
+/* ********************************************************************* Fonts import link *************************************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+
+/* ********************************************************************* :root styling   ************************************************************************ */
+:root {
+    --red: #811515;
+    --bg: #fceded;
+    --border: rgb(58, 1, 1);
+    --t-beige: #f8f8db;
+    --text: #1013cc;
+    --heading-font: "Ubuntu", sans-serif;
+    --normal-font: "Noto Sans JP", sans-serif;
+    --grey: #696767;
+}
+
+/* ********************************************************************** Global styling ************************************************************************** */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow: scroll; */
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+/* ********************************************************************** Navbar ************************************************************************** */
+
+header {
+    height: 87px;
+    width: 100%;
+    /* border: 2px black solid; */
+    background-color: var(--bg);
+    transition: 0.5s ease;
+    cursor: pointer;
+    /* border-bottom: 1px rgba(197, 196, 196, 0.733) solid; */
+}
+
+/* header:hover {
+    background-color: #fbfbe2;
+} */
+
+header nav {
+    height: 100%;
+    width: 100%;
+    /* border: 2px red solid; */
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3vw;
+    box-sizing: border-box;
+    align-items: center;
+
+}
+
+header nav .logo-div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+header nav .nav-links {
+    height: 100%;
+    width: auto;
+    display: flex;
+    align-items: center;
+
+
+}
+
+header nav .nav-links ul {
+    display: flex;
+    gap: 33px;
+}
+
+header nav .nav-links ul li {
+    list-style-type: none;
+}
+
+header nav .nav-links ul li a {
+    text-decoration: none;
+    font-size: 19px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: var(--red);
+    position: relative;
+    padding-bottom: 4px;
+}
+
+header nav .nav-links ul li a::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    bottom: -10%;
+    background-color: var(--border);
+    border-radius: 70px;
+    transform-origin: bottom right;
+    transition: transform 0.4s ease;
+    transform: scaleX(0);
+}
+
+header nav .nav-links ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+header nav .logo-div .burger {
+    height: 28px;
+    width: 32px;
+
+    align-items: flex-end;
+    justify-content: space-evenly;
+    flex-direction: column;
+    cursor: pointer;
+    display: none;
+
+}
+
+header nav .logo-div .burger .line {
+    height: 4px;
+    width: 65%;
+    background-color: var(--text);
+    border-radius: calc(infinity * 1px);
+
+}
+
+header nav .logo-div .burger .line:nth-child(1) {
+    width: 100%;
+}
+
+header nav .logo-div .close {
+    height: 28px;
+    width: 32px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+    display: none;
+}
+
+header nav .logo-div .close .line {
+    height: 4px;
+    width: 95%;
+    background-color: var(--text);
+    border-radius: calc(infinity * 1px);
+    transform: rotate(145deg);
+    position: absolute;
+}
+
+header nav .logo-div .close .line:nth-child(1) {
+    transform: rotate(45deg);
+    position: static;
+}
+
+/* ========================== Responsiveness navbar ============================= */
+@media only screen and (max-width: 826px) {
+    header nav .logo-div .close {
+        display: none;
+    }
+
+    header nav .logo-div .burger {
+        display: flex;
+    }
+
+    header nav .logo-div .burger .line {
+        display: block;
+    }
+
+    header nav .nav-links ul {
+        flex-direction: column;
+        gap: 2vh;
+    }
+
+    header {
+        height: auto;
+        padding: 2vh 0;
+        /* border: 2px black solid; */
+        box-sizing: border-box;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+
+    header nav .nav-links {
+        justify-content: flex-start;
+        margin-top: 10px;
+        display: none;
+
+    }
+
+    header nav .logo-div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+    }
+}
+
+/* ************************************************************* Home Container *************************************************************************** */
+.home-container {
+    height: 70vh;
+    width: 100%;
+    /* border: 2px black solid; */
+    display: flex;
+    justify-content: space-between;
+    padding: 2vh 2vw;
+    box-sizing: border-box;
+}
+
+.home-container .home-img {
+    height: 100%;
+    width: 50%;
+    /* border: 2px black solid; */
+}
+
+.home-container .home-img img {
+    height: 100%;
+    width: 100%;
+}
+
+.home-container .home-text {
+    height: 100%;
+    width: 50%;
+    /* border: 2px black solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 1vw;
+}
+
+.home-container .home-text h1 {
+    font-size: 50px;
+    font-family: var(--heading-font);
+    color: rgb(56, 3, 3);
+}
+
+.home-container .home-text p {
+    font-size: 22px;
+    font-family: var(--normal-font);
+    margin-top: 10px;
+}
+
+.home-container .home-text .btn-join a {
+    position: relative;
+    color: var(--red);
+    text-decoration: none;
+}
+
+.home-container .home-text .btn-join {
+    padding: 2vh 0;
+    width: 9vw;
+    border-radius: 10px;
+    border: 1px rgba(42, 1, 1, 0.888) solid;
+    outline: none;
+    font-size: 23px;
+    margin-top: 7vh;
+    color: var(--red);
+    overflow: hidden;
+    align-self: flex-end;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-container .home-text .btn-join::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(48, 2, 2);
+    left: -100%;
+    bottom: 0;
+    border-radius: 100%;
+    transition: 0.4s ease;
+}
+
+.home-container .home-text .btn-join:hover::after {
+    left: 0;
+    border-radius: 0;
+    z-index: 1;
+}
+
+.home-container .home-text .btn-join:hover a {
+    z-index: 99;
+    color: white;
+}
+
+/* *********************************************************************** responsive Home ******************************************************************** */
+
+@media only screen and (max-width: 1063px) {
+    .home-container .home-text .btn-join {
+        width: 12vw;
+        font-size: 1.9vw;
+    }
+}
+
+@media only screen and (max-width: 826px) {
+    .home-container {
+        min-height: 90vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 5vh;
+    }
+
+    .home-container .home-text {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .home-container .home-text h1 {
+        font-size: 30px;
+    }
+
+    .home-container .home-text .btn-join {
+        font-size: 25px;
+        padding: 1vh 0;
+        margin-top: 0px;
+    }
+
+    .home-container .home-img {
+        width: 100%;
+        height: 40vh;
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    .home-container .home-text .btn-join {
+        width: 20vw;
+    }
+}
+
+@media only screen and (max-width: 464px) {
+    .home-container {
+        min-height: 100vh;
+    }
+
+    .home-container .home-text {
+        height: 60vh;
+    }
+
+    .home-container .home-text .btn-join {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .home-container .home-text .btn-join {
+        font-size: 17px;
+    }
+}
+
+/* ************************************************************* About ************************************************************************************ */
+.abt-container {
+    height: 60vh;
+    width: 100%;
+    /* border: 2px black solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.abt-container .abt-hd {
+    height: 10vh;
+    width: 100%;
+    padding: 0 2vw;
+    box-sizing: border-box;
+    border-bottom: 1px rgba(69, 4, 4, 0.403) solid;
+    display: flex;
+    align-items: center;
+}
+
+.abt-container .abt-hd h2 {
+    color: rgb(56, 3, 3);
+    font-size: 23px;
+    font-family: var(--heading-font);
+}
+
+.abt-container .abt-content {
+    height: auto;
+    width: 100%;
+    display: flex;
+    padding: 0 2vw;
+    box-sizing: border-box;
+}
+
+.abt-container .abt-content .abt-img {
+    height: auto;
+    width: 50vw;
+}
+
+.abt-container .abt-content .abt-img img {
+    height: 100%;
+    width: 100%;
+}
+
+.abt-container .abt-content .abt-para {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.abt-container .abt-content .abt-para h2 {
+    color: rgb(56, 3, 3);
+    font-size: 30px;
+    font-family: var(--heading-font);
+}
+
+.abt-container .abt-content .abt-para p {
+    color: rgb(29, 1, 1);
+    font-family: var(--normal-font);
+    font-size: 17px;
+}
+
+/* *************************************************************** About reaponsive ******************************************************************* */
+@media only screen and (max-width: 826px) {
+    .abt-container {
+        min-height: 90vh;
+    }
+
+    .abt-container .abt-content {
+        flex-direction: column;
+    }
+
+    .abt-container .abt-content .abt-para {
+        width: 100%;
+    }
+
+    .abt-container .abt-content .abt-img {
+        width: 100%;
+    }
+
+}
+
+/* ***************************************************************** Join Container ********************************************************************** */
+.join-container {
+    height: 70vh;
+    width: 100%;
+    /* border: 2px black solid; */
+}
+
+.join-container .join-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.join-container .join-wrapper .join-hd {
+    height: 12vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 2vw;
+    box-sizing: border-box;
+}
+
+.join-container .join-wrapper .join-hd h1 {
+    font-family: var(--heading-font);
+    font-size: 25px;
+    color: rgb(56, 3, 3);
+}
+
+.join-container .join-wrapper .cards {
+    height: 50vh;
+    width: 100%;
+    /* border: 2px black solid; */
+    display: flex;
+    gap: 20vw;
+    justify-content: center;
+}
+
+.join-container .join-wrapper .cards .card-wrapper {
+    height: 50vh;
+    width: 30%;
+    /* border: 2px black solid; */
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.join-container .join-wrapper .cards .card-wrapper img {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    position: relative;
+}
+
+.join-container .join-wrapper .cards .wrapper-1::after {
+    content: "There are many ways to support the Yogi Foundation's blood donation program. You can donate blood, volunteer at our camps, or help spread awareness. Every contribution saves lives and makes a meaningful impact!";
+}
+
+.join-container .join-wrapper .cards .wrapper-2::after {
+    content: "The Yogi Foundation is building a dedicated yoga and meditation center to promote physical and mental well-being. This center will serve as a sanctuary for individuals to practice mindfulness and achieve inner peace.";
+}
+
+.join-container .join-wrapper .cards .card-wrapper::after {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: -100%;
+    left: 0;
+    background-color: rgba(89, 4, 4, 0.256);
+    backdrop-filter: blur(10px);
+    transition: 0.4s ease;
+    border-radius: 100%;
+    color: rgb(156, 146, 249);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--normal-font);
+}
+
+.join-container .join-wrapper .cards .card-wrapper:hover::after {
+    bottom: 0;
+    border-radius: 0;
+}
+
+@media only screen and (max-width: 826px) {
+    
+    .join-container {
+        min-height: 70vh;
+        border: 2px black solid;
+    }
+
+    .join-container .join-wrapper {
+        border: 2px black solid;
+    }
+.join-container .join-wrapper .cards {
+    flex-direction: column;
+    gap: 5vh;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.join-container .join-wrapper .cards .card-wrapper {
+    height: 100%;
+    width: 60%;
+}
+
+.join-container .join-wrapper .cards .card-wrapper::after {
+    font-size: 15px;
+}
+}
+
+@media only screen and (max-width: 500px) {
+    .join-container .join-wrapper .cards .card-wrapper {
+        width: 90%;
+        height: auto;
+    }
+    .join-container .join-wrapper .cards {
+        margin-top: 10px;
+    }
+}
+
+/* ***************************************************************** Contact form ******************************************************************************* */
+.cont-container {
+    height: 100vh;
+    width: 100%;
+    /* border: 2px black solid; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont-container .cont-wrapper {
+    height: 85vh;
+    width: 85%;
+    border: 1px rgba(67, 4, 4, 0.786) solid;
+    display: flex;
+    flex-direction: column;
+}
+
+.cont-container .cont-wrapper .form {
+    height: 50%;
+    width: 100%;
+    /* border: 1px rgba(67, 4, 4, 0.786) solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cont-container .cont-wrapper .form .form-txt {
+    height: 30%;
+    width: 100%;
+    /* border: 2px red solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+}
+
+.cont-container .cont-wrapper .form .form-txt h1 {
+    font-size: 40px;
+    font-family: var(--heading-font);
+    color: var(--red);
+}
+
+.cont-container .cont-wrapper .form .form-txt p {
+    font-size: 20px;
+    font-family: var(--normal-font);
+    font-weight: 600;
+    text-align: center;
+}
+
+.cont-container .cont-wrapper .form .form-wrapper {
+    height: 70%;
+    width: 60%;
+    /* border: 2px green solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont-container .cont-wrapper .form .form-wrapper form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont-container .cont-wrapper .form .form-wrapper form label {
+    font-size: 20px;
+    font-family: var(--normal-font);
+    color: black;
+}
+
+.cont-container .cont-wrapper .form .form-wrapper form input  {
+    /* height: 40px; */
+    width: 50%;
+    padding: 1vh 1vw;
+    border-left: 1px var(--red) solid;
+    border-bottom: 1px var(--red) solid;
+    border-top: none;
+    border-right: none;
+    outline: none;
+    color: var(--red);
+    font-size: 18px;
+}
+
+.cont-container .cont-wrapper .form .form-wrapper form input::placeholder {
+    color: rgba(81, 80, 80, 0.873);
+}
+
+.cont-container .cont-wrapper .form .form-wrapper .form-btn {
+    padding: 1vh 1vw;
+    width: 70%;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 1px var(--red) solid;
+    color: var(--red);
+    outline: none;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.cont-container .cont-wrapper .form .form-wrapper .form-btn:hover {
+    background-color: var(--red);
+    color: white;
+}
+
+.cont-container .cont-wrapper .text {
+    height: 50%;
+    width: 100%;
+    /* border: 2px black solid; */
+    display: flex;
+    justify-content: center;
+    gap: 4vw;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cont-container .cont-wrapper .text .txt-card {
+    height: 80%;
+    width: 30%;
+    border: 1px rgba(63, 4, 4, 0.848) solid;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2vh 0;
+    box-sizing: border-box;
+    gap: 1vh;
+}
+
+.cont-container .cont-wrapper .text .txt-card i {
+    font-size: 30px;
+}
+
+.cont-container .cont-wrapper .text .phone span {
+    font-size: 23px;
+    font-family: var(--heading-font);
+    text-align: center;
+}
+
+.cont-container .cont-wrapper .text .phone span a {
+    color: var(--red);
+    text-decoration: none;
+}
+
+.cont-container .cont-wrapper .text .location p {
+    font-size: 23px;
+    font-family: var(--heading-font);
+}
+
+@media only screen and (max-width: 1217px) {
+    .cont-container .cont-wrapper .text .txt-card {
+        width: 90%;
+        height: 40%;
+    }
+}
+
+@media only screen and (max-width: 735px) {
+    .cont-container .cont-wrapper .form .form-txt h1 {
+        font-size: 30px;
+    }
+
+    .cont-container .cont-wrapper .form .form-txt p {
+        font-size: 17px;
+    }
+
+    .cont-container .cont-wrapper .form .form-wrapper {
+        width: 100%;
+    }
+
+    .cont-container .cont-wrapper .form .form-wrapper form input {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .cont-container {
+        height: 110vh;
+    }
+
+    .cont-container .cont-wrapper {
+        height: 100vh;
+    }
+    .cont-container .cont-wrapper .form .form-txt {
+        height: 40%;
+    }
+}
+
+/*  ********************************************************************* Footer ****************************************************************************** */
+footer {
+    height: 10vh;
+    width: 100%;
+    /* border: 2px black solid; */
+    background-color: var(--bg);
+}
+
+footer .footer-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .footer-container p {
+    font-size: 18px;
+    font-family: var(--heading-font);
+    color: var(--red);
+    text-align: center;
+    word-wrap: break-word;
+}
