@@ -278,6 +278,7 @@ header nav .logo-div .close .line:nth-child(1) {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white;
 }
 
 .home-container .home-text .btn-join::after {
@@ -682,6 +683,7 @@ header nav .logo-div .close .line:nth-child(1) {
     outline: none;
     transition: 0.2s ease;
     cursor: pointer;
+    background-color: white;
 }
 
 .cont-container .cont-wrapper .form .form-wrapper .form-btn:hover {
